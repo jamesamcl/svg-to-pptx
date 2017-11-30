@@ -402,18 +402,12 @@ public class SVGConverter
     
     Color convertColor(String color)
     {
-    	if(color.equals("none"))
-    	{
-    		return null;
-    	}
-    	
-    	if(color.equals("black"))
-    	{
-    		return Color.BLACK;
-    	}
-    	
-    	
-    	return Color.decode(color);
+	    // TODO hacky, should have a mapping of SVG color names
+	    try {
+		return (Color) Color.class.getDeclaredField(color).get(null);
+	    } catch(Exception e) {
+		return Color.decode(color);
+	    }
     }
     
    
