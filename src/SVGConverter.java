@@ -402,6 +402,10 @@ public class SVGConverter
     
     Color convertColor(String color)
     {
+	    if(color.equals("none")) {
+                return null;
+	    }
+	 
 	    // TODO hacky, should have a mapping of SVG color names
 	    try {
 		return (Color) Color.class.getDeclaredField(color).get(null);
