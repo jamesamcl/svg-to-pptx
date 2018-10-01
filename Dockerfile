@@ -1,5 +1,5 @@
 
-FROM ubuntu:18.04
+FROM ubuntu:16.04
 MAINTAINER James Alastair McLaughlin <j.a.mclaughlin@ncl.ac.uk>
 
 RUN apt-get update && apt-get install -y default-jdk maven
